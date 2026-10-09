@@ -1,171 +1,51 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <title>Laptop Device Specifications</title>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f4f7;
-            margin: 0;
-            padding: 0;
-        }
+    .card {
+      padding: 48px 56px;
+      border-radius: 16px;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
 
-        header {
-            background-color: #1f2937;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      color: #1e3c72;
+    }
 
-        header h1 {
-            margin: 0;
-        }
+    p {
+      font-size: 1.3rem;
+      margin: 8px 0;
+    }
 
-        .container {
-            width: 80%;
-            margin: 30px auto;
-        }
-
-        .student-details,
-        .specifications {
-            background-color: white;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #1f2937;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 14px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #374151;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9fafb;
-        }
-
-        footer {
-            background-color: #1f2937;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+    .label { color: #666; }
+    .value { font-weight: 600; }
+  </style>
 </head>
-
 <body>
-
-    <header>
-        <h1>Laptop Device Specifications</h1>
-        <p>Simple Web Server using Python</p>
-    </header>
-
-    <div class="container">
-
-        <div class="student-details">
-            <h2>Student Details</h2>
-
-            <p><strong>Name:</strong> Kavi Pragathi</p>
-
-            <p>
-                <strong>Register Number:</strong>
-                26010384
-            </p>
-
-            <p>
-                <strong>Department:</strong>
-                Computer Science and Engineering
-            </p>
-        </div>
-
-        <div class="specifications">
-
-            <h2>Laptop Specifications</h2>
-
-            <table>
-
-                <tr>
-                    <th>Specification</th>
-                    <th>Details</th>
-                </tr>
-
-                <tr>
-                    <td>Device Type</td>
-                    <td>Laptop</td>
-                </tr>
-
-                <tr>
-                    <td>Processor</td>
-                    <td>Intel Core i5</td>
-                </tr>
-
-                <tr>
-                    <td>RAM</td>
-                    <td>16 GB</td>
-                </tr>
-
-                <tr>
-                    <td>Storage</td>
-                    <td>512 GB SSD</td>
-                </tr>
-
-                <tr>
-                    <td>Display</td>
-                    <td>15.6-inch Full HD</td>
-                </tr>
-
-                <tr>
-                    <td>Graphics</td>
-                    <td>Intel Iris Xe Graphics</td>
-                </tr>
-
-                <tr>
-                    <td>Operating System</td>
-                    <td>Windows 11</td>
-                </tr>
-
-                <tr>
-                    <td>Wi-Fi</td>
-                    <td>Available</td>
-                </tr>
-
-                <tr>
-                    <td>Bluetooth</td>
-                    <td>Available</td>
-                </tr>
-
-            </table>
-
-        </div>
-
-    </div>
-
-    <footer>
-        <p>Simple Web Server | Computer Science and Engineering</p>
-    </footer>
-
+  <div class="card">
+    <h1>Welcome</h1>
+    <p><span class="label">Name:</span> <span class="value">KAVI PRAGATHI SP</span></p>
+    <p><span class="label">Register Number:</span> <span class="value">26010384</span></p>
+  </div>
 </body>
-
 </html>
