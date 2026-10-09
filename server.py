@@ -1,25 +1,34 @@
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+from http.server import BaseHTTPRequestHandler, HTTPServer
+from pathlib import Path
 
-
-class CustomRequestHandler(SimpleHTTPRequestHandler):
-    def do_GET(self):
-        if self.path == "/":
-            self.path = "/index.html"
-
-        return super().do_GET()
-
-
-HOST = "127.0.0.1"
+HOST = "localhost"
 PORT = 8000
+HTML_FILE = Path(__file__).parent / "welcome.html"
 
-server_address = (HOST, PORT)
 
-http_server = HTTPServer(
-    server_address,
-    CustomRequestHandler
-)
+class WelcomeHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        if self.path in ("/", "/index.html", "/welcome.html"):
+            try:
+                content = HTML_FILE.read_bytes()
+            except FileNotFoundError:
+                self.send_error(500, "welcome.html not found next to server.py")
+                return
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+        else:
+            self.send_error(404, "Page not found")
 
-print(f"Server started successfully!")
-print(f"Open your browser and visit: http://{HOST}:{PORT}")
-print("Press Ctrl+C to stop the server.")
 
+if __name__ == "__main__":
+    server = HTTPServer((HOST, PORT), WelcomeHandler)
+    print(f"Server running at http://{HOST}:{PORT}")
+    print("Press Ctrl+C to stop.")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nServer stopped.")
+        server.server_close()
