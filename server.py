@@ -1,7 +1,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
-HOST = "localhost"
+HOST = "127.0.0.1"
 PORT = 8000
 HTML_FILE = Path(__file__).parent / "welcome.html"
 
